@@ -10,8 +10,7 @@ print("")
 # IMPORTANDO O GERADOR DE NÚMEROS INTEIROS ALEATÓRIOS.
 from random import randint
 numero_certo = randint(1, 100)
-
-
+numero_tentativas = 1
 tentativa = int(input("Tente adivinhar o número: "))
 
 while tentativa != numero_certo:
@@ -19,10 +18,11 @@ while tentativa != numero_certo:
         print("O número é <", tentativa)
     elif tentativa < numero_certo:
         print("O número é >", tentativa)
+        numero_tentativas = numero_tentativas + 1
     tentativa = int(input("Tente novamente: "))
 
 if tentativa == numero_certo:
-    print("Parabéns, você acertou!")
+    print(f"Parabéns, você acertou em {numero_tentativas} tentativas!")
 
 
 
